@@ -108,10 +108,10 @@ function createGame ()
         for(const fruitId in state.fruits)
         {
             const fruit = state.fruits[fruitId];
-            console.log(`Checking ${player.id} and ${fruitId}`)
+            //console.log(`Checking ${player.id} and ${fruitId}`)
             if(player.x === fruit.x && player.y === fruit.y) 
             {
-                console.log(`Collision between ${player.id} and ${fruitId}`)
+                //console.log(`Collision between ${player.id} and ${fruitId}`)
                 player.points += fruit.points;
                 notifyAll({
                     type: 'player-points',
