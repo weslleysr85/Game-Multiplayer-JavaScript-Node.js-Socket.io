@@ -1,4 +1,3 @@
-console.log(`gameRender.js LOADED`)
 
 export default function createGameRender (game)
 {

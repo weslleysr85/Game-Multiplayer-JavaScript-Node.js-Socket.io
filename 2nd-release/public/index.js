@@ -2,7 +2,6 @@ import keyboardListener from "./keyboardListener.js";
 import createGame from "./game.js";
 import createGameRender from "./gameRender.js"
 
-console.log(`index.js LOADED`)
 
 const game = createGame();
 const gameRender = createGameRender(game);

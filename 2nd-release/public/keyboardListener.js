@@ -1,4 +1,3 @@
-console.log(`keyboardListener.js LOADED`)
 
 function createKeyboardListener() 
 {
