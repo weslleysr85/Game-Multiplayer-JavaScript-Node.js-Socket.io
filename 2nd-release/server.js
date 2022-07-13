@@ -13,12 +13,13 @@ const game = createGame();
 game.start();
 
 game.subscribe((command) => {
-    console.log(`Emitting ${command.type}`);
+    console.log(`server.js -> Emitting ${command.type}`);
     sockets.emit(command.type, command);
 });
 //game.addPlayer({id:'p1', x:1, y:1});
 //game.addFruit({id:'f1', x:1, y:3, points:50});
-console.log(game.state);
+console.log('server.js -> ')
+console.log(game.state); //{ size: 40, players: {}, fruits: {} }
 
 sockets.on('connection', (socket)=>
 {
