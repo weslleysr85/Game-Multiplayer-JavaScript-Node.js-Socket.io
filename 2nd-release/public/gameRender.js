@@ -1,3 +1,5 @@
+console.log(`gameRender.js LOADED`)
+
 export default function createGameRender (game)
 {
     const screen = document.getElementById("screen");

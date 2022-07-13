@@ -1,3 +1,5 @@
+console.log(`quadtree.js LOADED`)
+
 function QuadNode (x = 0, y = 0)
 {
     return {

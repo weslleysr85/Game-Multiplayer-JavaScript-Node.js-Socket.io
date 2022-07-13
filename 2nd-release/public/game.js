@@ -1,5 +1,7 @@
 import UUID from "./uuid.js"
 
+console.log(`game.js LOADED`)
+
 function createGame () 
 {
     const acceptedMoves = {

@@ -2,6 +2,8 @@ import keyboardListener from "./keyboardListener.js";
 import createGame from "./game.js";
 import createGameRender from "./gameRender.js"
 
+console.log(`index.js LOADED`)
+
 const game = createGame();
 const gameRender = createGameRender(game);
 
@@ -10,7 +12,7 @@ const socket = io();
 socket.on('connect', ()=>
 {
     const playerId = socket.id;
-    console.log(`Player connected on Client with id: ${playerId}`)
+    console.log(`index.js -> Player connected on Client with id: ${playerId}`)
 });
 
 socket.on('disconnect', ()=>
@@ -22,7 +24,7 @@ socket.on('disconnect', ()=>
 socket.on('setup', (state)=>
 {
     const playerId = socket.id;
-    console.log(`Receiving setup`, state);
+    console.log(`index.js -> Receiving setup`, state);
     game.setState(state);
 
     game.current = playerId;
@@ -36,19 +38,19 @@ socket.on('setup', (state)=>
 
 socket.on('add-player', (command)=>
 {
-    console.log(`Receiving ${command.type}`, command);
+    console.log(`index.js -> Receiving ${command.type}`, command);
     game.addPlayer(command);
 });
 
 socket.on('remove-player', (command)=>
 {
-    console.log(`Receiving ${command.type}`, command);
+    console.log(`index.js -> Receiving ${command.type}`, command);
     game.removePlayer(command);
 });
 
 socket.on('move-player', (command)=>
 {
-    console.log(`Receiving ${command.type}`, command);
+    console.log(`index.js -> Receiving ${command.type}`, command);
     const playerId = socket.id;
 
     //if(playerId !== command.playerId)
@@ -57,18 +59,18 @@ socket.on('move-player', (command)=>
 
 socket.on('add-fruit', (command)=>
 {
-    console.log(`Receiving ${command.type}`, command);
+    console.log(`index.js -> Receiving ${command.type}`, command);
     game.addFruit(command);
 });
 
 socket.on('remove-fruit', (command)=>
 {
-    console.log(`Receiving ${command.type}`, command);
+    console.log(`index.js -> Receiving ${command.type}`, command);
     game.removeFruit(command);
 });
 
 socket.on('player-points', (command)=>
 {
-    console.log(`Receiving ${command.type}`, command);
+    console.log(`index.js -> Receiving ${command.type}`, command);
     game.state.players[command.id].points = command.points;
 });
