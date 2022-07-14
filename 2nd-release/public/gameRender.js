@@ -17,14 +17,7 @@ export default function createGameRender (game)
             context.fillStyle = rect.color;
             context.fillRect(rect.x*pixelSize, rect.y*pixelSize, pixelSize, pixelSize);
         }
-
-        function drawEllipse (ellipse)
-        {
-            //context.ellipse(x, y, radiusX, radiusY, rotation, startAngle, endAngle);
-            context.ellipse(ellipse.x*pixelSize, ellipse.y*pixelSize, pixelSize, pixelSize, 0, 0, 360);
-            context.fillStyle = 'green';
-            context.fill();
-        }
+       
         //--- Renderizar players e fruits ----//
         for(const pid in game.state.players){
             const player = game.state.players[pid];
@@ -33,8 +26,7 @@ export default function createGameRender (game)
 
         for(const fid in game.state.fruits){
             const player = game.state.fruits[fid];
-            drawRect({...player, color:'green'})            
-           // drawEllipse({...player, color:'green'});
+            drawRect({...player, color:'green'})  
         }
 
         const playerPoints = document.getElementById("points");
