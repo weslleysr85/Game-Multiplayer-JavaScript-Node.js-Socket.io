@@ -16,9 +16,7 @@ game.subscribe((command) => {
     console.log(`server.js -> Emitting ${command.type}`);
     sockets.emit(command.type, command);
 });
-//game.addPlayer({id:'p1', x:1, y:1});
-//game.addFruit({id:'f1', x:1, y:3, points:50});
-console.log('server.js -> ')
+
 console.log(game.state); //{ size: 40, players: {}, fruits: {} }
 
 sockets.on('connection', (socket)=>
@@ -37,10 +35,8 @@ sockets.on('connection', (socket)=>
     {
         command.playerId = playerId;
         command.type = 'move-player';
-
         game.movePlayer(command);
     });
-
 });
 
 

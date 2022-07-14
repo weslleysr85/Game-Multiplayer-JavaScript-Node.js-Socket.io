@@ -4,9 +4,11 @@ export default function createGameRender (game)
     const screen = document.getElementById("screen");
     const context = screen.getContext('2d');
     requestAnimationFrame(renderScreen);
+   
     function renderScreen () 
     {
-        context.clearRect(0, 0, screen.width, screen.height);
+       
+        context.clearRect(0, 0, screen.width, screen.height); //variaveis no index.html
 
         const pixelSize = screen.width / game.state.size;
 
@@ -30,6 +32,7 @@ export default function createGameRender (game)
         const currentPlayer = game.state.players[game.current];
         if(currentPlayer) playerPoints.innerText = currentPlayer.points;
 
-        requestAnimationFrame(renderScreen);
+        requestAnimationFrame(renderScreen); //cria o loop de atualização de tela
+        
     }
 }

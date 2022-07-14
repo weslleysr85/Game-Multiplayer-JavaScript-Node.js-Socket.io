@@ -25,7 +25,7 @@ function createGame ()
     const current = undefined;
 
     const state = {
-        size:40,
+        size:40, //tamanho do jogador
         players: {},
         fruits: {}
     }
