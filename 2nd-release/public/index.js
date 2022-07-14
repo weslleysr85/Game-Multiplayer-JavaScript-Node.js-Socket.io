@@ -11,7 +11,6 @@ const socket = io();
 socket.on('connect', ()=>
 {
     const playerId = socket.id;
-    console.log(`index.js -> Player connected on Client with id: ${playerId}`)
 });
 
 socket.on('disconnect', ()=>
@@ -23,12 +22,10 @@ socket.on('disconnect', ()=>
 socket.on('setup', (state)=>
 {
     const playerId = socket.id;
-    console.log(`index.js -> Receiving setup`, state);
     game.setState(state);
 
     game.current = playerId;
     keyboardListener.registerPlayerId(playerId);
-    //keyboardListener.subscribe(game.movePlayer);
     keyboardListener.subscribe((command) => 
     {
         socket.emit('move-player', command);
@@ -37,39 +34,31 @@ socket.on('setup', (state)=>
 
 socket.on('add-player', (command)=>
 {
-    console.log(`index.js -> Receiving ${command.type}`, command);
     game.addPlayer(command);
 });
 
 socket.on('remove-player', (command)=>
 {
-    console.log(`index.js -> Receiving ${command.type}`, command);
     game.removePlayer(command);
 });
 
 socket.on('move-player', (command)=>
 {
-    console.log(`index.js -> Receiving ${command.type}`, command);
     const playerId = socket.id;
-
-    //if(playerId !== command.playerId)
-        game.movePlayer(command);
+    game.movePlayer(command);
 });
 
 socket.on('add-fruit', (command)=>
 {
-    console.log(`index.js -> Receiving ${command.type}`, command);
     game.addFruit(command);
 });
 
 socket.on('remove-fruit', (command)=>
 {
-    console.log(`index.js -> Receiving ${command.type}`, command);
     game.removeFruit(command);
 });
 
 socket.on('player-points', (command)=>
 {
-    console.log(`index.js -> Receiving ${command.type}`, command);
     game.state.players[command.id].points = command.points;
 });

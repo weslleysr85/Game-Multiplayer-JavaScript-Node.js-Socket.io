@@ -94,7 +94,6 @@ function createGame ()
         notifyAll(command);
 
         const { id, keyPressed } = command;
-        //console.log(`Moving ${id} with ${keyPressed}`);
         const player = state.players[id];
         const moveFunction = acceptedMoves[keyPressed];
         if(moveFunction && player) 
@@ -109,10 +108,8 @@ function createGame ()
         for(const fruitId in state.fruits)
         {
             const fruit = state.fruits[fruitId];
-            //console.log(`Checking ${player.id} and ${fruitId}`)
             if(player.x === fruit.x && player.y === fruit.y) 
             {
-                //console.log(`Collision between ${player.id} and ${fruitId}`)
                 player.points += fruit.points;
                 notifyAll({
                     type: 'player-points',
