@@ -47,3 +47,18 @@ socket.on('move-player', (command)=>
     const playerId = socket.id;
     game.movePlayer(command);
 });
+
+socket.on('add-fruit', (command)=>
+{
+    game.addFruit(command);
+});
+
+socket.on('remove-fruit', (command)=>
+{
+    game.removeFruit(command);
+});
+
+socket.on('player-points', (command)=>
+{
+    game.state.players[command.id].points = command.points;
+});

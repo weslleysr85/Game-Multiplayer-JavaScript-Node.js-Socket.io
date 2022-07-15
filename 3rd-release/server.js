@@ -13,16 +13,16 @@ const game = createGame();
 game.start();
 
 game.subscribe((command) => {
-    //console.log(`Emitting ${command.type}`);
+    console.log(`Emitting ${command.type}`);
     sockets.emit(command.type, command);
 });
 
-//console.log(game.state); //{ size: 40, players: {}, fruits: {} }
+console.log(game.state); //{ size: 40, players: {}, fruits: {} }
 
 sockets.on('connection', (socket)=>
 {
     const playerId = socket.id;
-   // console.log(`> Player connected on Server with id: ${playerId}`);
+    console.log(`> Player connected on Server with id: ${playerId}`);
     game.addPlayer({id:playerId});
     socket.emit('setup', game.state)
 
@@ -38,6 +38,7 @@ sockets.on('connection', (socket)=>
         game.movePlayer(command);
     });
 });
+
 
 server.listen(3000, ()=>
 {
