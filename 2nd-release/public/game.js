@@ -4,7 +4,7 @@ import UUID from "./uuid.js"
 function createGame () 
 {
     const acceptedMoves = {
-        ArrowUp(player)
+        ArrowUp(player) 
         {
             if(player.y > 0) player.y--;
         },
@@ -19,7 +19,8 @@ function createGame ()
         ArrowRight(player)
         {
             if(player.x < state.size-1) player.x++;
-        },
+        },   
+       
     }
 
     const current = undefined;
