@@ -65,7 +65,6 @@ function createGame ()
         state.current = id;
     }
 
-    
     return {
         state,
         setState,
