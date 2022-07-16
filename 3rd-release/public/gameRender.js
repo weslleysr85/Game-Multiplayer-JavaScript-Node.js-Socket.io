@@ -15,7 +15,7 @@ export default function createGameRender (game)
         function drawRect (rect)
         {
             context.fillStyle = rect.color;
-            context.fillRect(rect.x*pixelSize, rect.y*pixelSize, pixelSize, pixelSize);
+            context.fillRect(rect.x*pixelSize, rect.y*pixelSize, pixelSize, pixelSize);            
         }
        
         //--- Renderizar players e fruits ----//
