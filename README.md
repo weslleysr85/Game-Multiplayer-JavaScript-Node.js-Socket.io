@@ -9,7 +9,10 @@ gitpod.io# antes do endereço do repositório
 cd 1st-release
 navega até a pasta da versão
 
+npm init
 npm i
+npm i express
+npm install socket.io
 instala node_modules
 
 npm start
@@ -21,4 +24,4 @@ fecha servidor
 # Navegação em pastas pelo terminal
 cd volta para a pasta home
 cd .. volta uma pasta
-cd "minha pasta" vai apra uma pasta filha
+cd "minha pasta" vai para uma pasta filha
