@@ -6,7 +6,7 @@ tasks:
 
 ports:
   - name: Game
-    description: Jogo usando server em Node.js
+    description: Jogo usando servidor em Node.js
     port: 3000
     visibility: public
     onOpen: open-browser 
