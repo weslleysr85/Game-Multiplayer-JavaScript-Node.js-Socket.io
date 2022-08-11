@@ -1,0 +1,12 @@
+tasks:
+  - init: |
+      echo 'TODO: build project OK'
+    command: |
+      echo 'TODO: start app OK'
+
+ports:
+  - name: Game
+    description: Jogo usando server em Node.js
+    port: 3000
+    visibility: public
+    onOpen: open-browser 
